@@ -126,3 +126,18 @@
 }
 
 /* -------------------------------------- */
+/* svg */
+
+.cart {
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+    right: 50px;
+}
+
+.svg {
+    width: 100px;
+    height: 100px;
+    
+
+}
