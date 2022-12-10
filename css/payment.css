@@ -1,0 +1,59 @@
+.top-text {
+	/* background-color: red; */
+	width: 80%;
+	position: relative;
+}
+
+.top-text p {
+	margin: 30px;
+	font-size: 20px;
+	font-weight: bold;
+	color: red;
+}
+
+.payment_list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 200px;
+    padding-bottom: 20px;
+}
+
+.payment_list a {
+	color: black;
+	text-decoration: none;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+
+
+.sum {
+	text-align: right;
+}
+
+.chuc-nang {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	align-items: center;
+}
+
+.delete {
+	color: red;
+}
+
+.thanh-toan {
+	margin: 50px 300px;
+	width: 58vh;
+	height: 50px;
+	font-size: 20px;
+	font-weight: bold;
+	/* text-align: center; */
+	background-color: #00302E;
+}
+
+.thanh-toan a {
+	color: #F3C294;
+	text-decoration: none;
+}
