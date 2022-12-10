@@ -46,15 +46,15 @@ tr td img {
 
 .thanh-toan {
 	margin: 50px 300px;
-	width: 50vh;
-	height: 30px;
-	font-size: 15px;
-	font-weight: boid;
+	width: 58vh;
+	height: 50px;
+	font-size: 20px;
+	font-weight: bold;
 	text-align: center;
-	background-color: rgb(8, 67, 57);
+	background-color: #00302E;
 }
 
 .thanh-toan a {
-	color: rgb(155, 249, 5);
+	color: #F3C294;
 	text-decoration: none;
 }

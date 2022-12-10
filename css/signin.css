@@ -1,22 +1,23 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
-    
+
 }
 
 .container {
     display: flex;
     flex-direction: row;
-   
+
 }
 
 .image {
     flex: 1;
     width: 100%;
     background-color: red;
-   
+
 }
-.image img{
+
+.image img {
     /* width: 100%; */
     object-fit: cover;
     height: 100%;
@@ -33,8 +34,9 @@
     width: 80%;
     margin: 0px 0px;
     /* background-color: yellowgreen; */
-    
+
 }
+
 .logo-image img {
     width: 100%;
 }
@@ -42,7 +44,7 @@
 .location {
     display: flex;
     flex-direction: row;
-    
+
 }
 
 .location .chao {
@@ -57,6 +59,7 @@
     flex: 1;
     width: 100%;
 }
+
 .loca img {
     width: 100%;
 }
@@ -64,10 +67,11 @@
 .inp {
     width: 100%;
     /* background-color: blue; */
-    position: relative;  
-    height: 80px; 
+    position: relative;
+    height: 80px;
     margin-top: 20px;
 }
+
 .inp input {
     position: absolute;
     top: 0px;
@@ -78,9 +82,11 @@
     border: 1px solid red;
     padding-left: 30px;
 }
+
 .inp input:hover {
     border: 1px solid blue;
 }
+
 .inp .hide {
     position: absolute;
     bottom: 40px;
@@ -97,7 +103,7 @@
     padding-left: 30px;
     margin: auto;
     background-color: #00302E;
-}    
+}
 
 .btn button {
     background-color: #00302E;
@@ -109,7 +115,7 @@
     font-size: 20px;
     font-weight: bold;
     color: white;
-} 
+}
 
 .bottom {
     display: flex;
@@ -118,11 +124,11 @@
     align-items: center;
     margin: 10px 100px;
     color: #00302E;
-   justify-content: center;
-    
+    justify-content: center;
+
 }
 
 .bottom a {
-   
+    color: #F07B0E;
     text-decoration: none;
 }
