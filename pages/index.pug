@@ -1,0 +1,99 @@
+doctype html
+html(lang='vi')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Canteen US
+    link(rel='stylesheet' href='../css/base.css')
+    link(rel='stylesheet' href='../css/grid.css')
+    link(rel='stylesheet' href='../css/main.css')
+    link(rel='stylesheet' href='../css/style.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&display=swap')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
+  body
+    .app(style='min-height: 100vh;')
+      header.header
+        .grid.wide
+          nav.header__navbar.hide-on-mobile-tablet
+            ul.header__navbar-list(style='width:1200px')
+              // Header with Search
+              .header-with-search
+                label.header__mobile-search(for='mobile-search-checkbox')
+                  i.header__mobile-search-icon.fas.fa-search
+                // Header Logo
+                .header__logo.hide-on-tablet
+                  img.header__logo-img(src='../assets/img/logo.png' alt='')
+                  a.header__logo-link(href='/')
+                input#mobile-search-checkbox.header__search-checkbox(type='checkbox' hidden='')
+                // Header Search
+                .header__search
+                  .header__search-input-wrap
+                    input.header__search-input(type='text' placeholder='Nhập để tìm kiếm sản phẩm')
+                  button.header__search-btn
+                    i.header__search-btn-icon.fas.fa-search
+                // Header Logo
+                .header__location.hide-on-tablet
+                  img.header__location-img(src='../assets/img/location.png' alt='')
+                  a.header__location-link(href='/')
+                // User
+                .header__user
+                  img.header__navbar-user-img(src='../assets/img/user_avatar.png' alt='')
+                  ul.header__navbar-user-menu
+                    li.header__navbar-user-item
+                      a(href='') Tài khoản của tôi
+                    li.header__navbar-user-item.header__navbar-user-item--separate
+                      a(href='') Đăng xuất
+      .app__container(style='background-color: white;')
+        .grid.wide
+          .row.sm-gutter.app__content
+            // Category
+            .col.l-2.m-0.c-0(style='margin-top: 50px;')
+              nav.category
+                ul.category-list
+                  li.category-item.category-item--active
+                    button.category-item__link(href='https://www.w3schools.com/')
+                      | Trang
+                      | chủ
+                    // <a href="#" class="category-item__link">Trang chủ</a>
+                  li.category-item
+                    button.category-item__link
+                      | Thực đơn
+                    // <a href="#" class="category-item__link">Thực đơn</a>
+                  li.category-item
+                    button.category-item__link Kho hàng
+                    // <a href="#" class="category-item__link">Kho hàng</a>
+                  li.category-item
+                    button.category-item__link Khách hàng
+                    // <a href="#" class="category-item__link">Khách hàng</a>
+                  li.category-item
+                    button.category-item__link Thống kê
+                    // <a href="#" class="category-item__link">Thống kê</a>
+                  li.category-item
+                    button.category-item__link Nhân viên
+                    // <a href="#" class="category-item__link">Nhân viên</a>
+                  li.category-item
+                    button.category-item__link Tạo thẻ khách hàng
+                    // <a href="#" class="category-item__link">Tạo thẻ khách hàng</a>
+            .right
+              .type-food
+                button#food.type-food-eat.active Đồ ăn
+                button#drink.type-food-drink
+                  a(href='../pages/drink.html' style='text-decoration: none; color: #39B1E4;') Nước, bánh
+              .list
+                //- each food in foods --> goi food ra
+                //- .food
+                //-   .image
+                //-     img(src=#{food.img} alt='')
+                //-   .name food.name
+                //-   .id food.id
+                //-   span.price
+                //-     | food.price 
+                //-     .coin VND
+                //-   button.add Thêm
+                
+        a(href='../pages/dashboard.html')
+          .cart
+            img.svg(src='../assets/img/cart-svgrepo-com.svg')
+            p 1
+    script(src='../js/index.js')
