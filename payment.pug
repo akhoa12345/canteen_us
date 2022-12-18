@@ -95,11 +95,11 @@ html(lang='vi')
                   h5.modal-title Mời nhập mã thẻ thành viên
                   span.close ×
                 .modal-body
-                  .cart-row
-                    input(style='height: 24px; width: 200px;' type='text')
+                  form.cart-row(method='POST' action='payment.html')
+                    input(name='ma_the_thanh_vien' style='height: 24px; width: 200px;' type='text')
                   .cart-payment
                     button#btn-payment Thanh toán 
-                    p#success(style='display: none;') Thanh toán thành công
+                    // <p id="success" style="display: none;">Thanh toán thành công</p>
             #zalopay_qr.modal(style='display: none;')
               .modal-content
                 .modal-header

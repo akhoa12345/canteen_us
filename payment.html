@@ -152,14 +152,13 @@
 								<span class="close">&times;</span>
 							</div>
 							<div class="modal-body">
-								<div class="cart-row">
-									<input style="height: 24px; width: 200px;" type="text">
+								<form class="cart-row" method="POST" action="payment.html">
+									<input name="ma_the_thanh_vien" style="height: 24px; width: 200px;" type="text">
 
-								</div>
-
+								</form>
 								<div class="cart-payment">
 									<button id="btn-payment">Thanh toán </button>
-									<p id="success" style="display: none;">Thanh toán thành công</p>
+									<!-- <p id="success" style="display: none;">Thanh toán thành công</p> -->
 								</div>
 							</div>
 						</div>
