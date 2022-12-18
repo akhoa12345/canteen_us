@@ -4,10 +4,10 @@ html(lang='vi')
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
     title Canteen US
-    link(rel='stylesheet' href='../css/base.css')
-    link(rel='stylesheet' href='../css/grid.css')
-    link(rel='stylesheet' href='../css/main.css')
-    link(rel='stylesheet' href='../css/style.css')
+    link(rel='stylesheet' href='./assets/css/base.css')
+    link(rel='stylesheet' href='./assets/css/grid.css')
+    link(rel='stylesheet' href='./assets/css/main.css')
+    link(rel='stylesheet' href='./assets/css/payment.css')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css')
     link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto&display=swap')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css')
@@ -23,7 +23,7 @@ html(lang='vi')
                   i.header__mobile-search-icon.fas.fa-search
                 // Header Logo
                 .header__logo.hide-on-tablet
-                  img.header__logo-img(src='../assets/img/logo.png' alt='')
+                  img.header__logo-img(src='./assets/img/logo.png' alt='')
                   a.header__logo-link(href='/')
                 input#mobile-search-checkbox.header__search-checkbox(type='checkbox' hidden='')
                 // Header Search
@@ -34,11 +34,11 @@ html(lang='vi')
                     i.header__search-btn-icon.fas.fa-search
                 // Header Logo
                 .header__location.hide-on-tablet
-                  img.header__location-img(src='../assets/img/location.png' alt='')
+                  img.header__location-img(src='./assets/img/location.png' alt='')
                   a.header__location-link(href='/')
                 // User
                 .header__user
-                  img.header__navbar-user-img(src='../assets/img/user_avatar.png' alt='')
+                  img.header__navbar-user-img(src='./assets/img/user_avatar.png' alt='')
                   ul.header__navbar-user-menu
                     li.header__navbar-user-item
                       a(href='') Tài khoản của tôi
@@ -46,16 +46,16 @@ html(lang='vi')
                       a(href='') Đăng xuất
       .app__container(style='background-color: white;')
         .grid.wide
-          .row.sm-gutter.app__content
+          .row.sm-gutter.app__content.container-center
             // Category
             .col.l-2.m-0.c-0(style='margin-top: 50px;')
               nav.category
                 ul.category-list
                   li.category-item.category-item--active
-                    button.category-item__link(href='https://www.w3schools.com/')
-                      | Trang
-                      | chủ
-                    // <a href="#" class="category-item__link">Trang chủ</a>
+                    button.category-item__link
+                      a(style='text-decoration: none;' href='./index.html')
+                        | Trang
+                        | chủ
                   li.category-item
                     button.category-item__link
                       | Thực đơn
@@ -75,25 +75,43 @@ html(lang='vi')
                   li.category-item
                     button.category-item__link Tạo thẻ khách hàng
                     // <a href="#" class="category-item__link">Tạo thẻ khách hàng</a>
-            .right
-              .type-food
-                button#food.type-food-eat.active Đồ ăn
-                button#drink.type-food-drink
-                  a(href='../pages/drink.html' style='text-decoration: none; color: #39B1E4;') Nước, bánh
-              .list
-                //- each food in foods --> goi food ra
-                //- .food
-                //-   .image
-                //-     img(src=#{food.img} alt='')
-                //-   .name food.name
-                //-   .id food.id
-                //-   span.price
-                //-     | food.price 
-                //-     .coin VND
-                //-   button.add Thêm
-                
-        a(href='../pages/dashboard.html')
-          .cart
-            img.svg(src='../assets/img/cart-svgrepo-com.svg')
-            p 1
-    script(src='../js/index.js')
+            .top-text
+              // <p class="id">Mã đơn : 43289</p>
+              // <button class="thanh-toan"><img src="https://upload.wikimedia.org/wikipedia/vi/thumb/f/fe/MoMo_Logo.png/220px-MoMo_Logo.png" alt=""><a href="">Momo</a></button>
+              // <a href=""><img src="https://upload.wikimedia.org/wikipedia/vi/thumb/f/fe/MoMo_Logo.png/220px-MoMo_Logo.png" alt="">Facebook</a>
+              .payment_list
+                img(width='80px' height='80px' src='https://thegioiinan.com/hinhanh/sanpham/inan_111/tin_622/The_gioi_in_an_tin_imagebanner_20200116134929326.jpg' alt='')
+                button#cart.payment Thẻ thành viên
+              .payment_list
+                img(width='80px' height='80px' src='https://play-lh.googleusercontent.com/yHmIm7FYKe_dW2WHTwWizp2p_gt7_ctdpCUevX654E1dsj5c9McWO03k_S6PPLG_DNz7' alt='')
+                button#btn-zalopay.payment ZaloPay
+              .payment_list
+                img(width='80px' height='80px' src='https://upload.wikimedia.org/wikipedia/vi/thumb/f/fe/MoMo_Logo.png/220px-MoMo_Logo.png' alt='')
+                button#btn-momo.payment Momo
+              // <button class="thanh-toan"> <a href="">Thanh toán</a> </button>
+            #myModal.modal
+              .modal-content
+                .modal-header
+                  h5.modal-title Mời nhập mã thẻ thành viên
+                  span.close ×
+                .modal-body
+                  .cart-row
+                    input(style='height: 24px; width: 200px;' type='text')
+                  .cart-payment
+                    button#btn-payment Thanh toán 
+                    p#success(style='display: none;') Thanh toán thành công
+            #zalopay_qr.modal(style='display: none;')
+              .modal-content
+                .modal-header
+                  h5.modal-title Mã QR ZaloPay
+                  span.close ×
+                .modal-body
+                  img(width='300px' height='300px' src='https://www.qrcode-gen.com/images/qrcode-default.png' alt='')
+            #momo_qr.modal(style='display: none;')
+              .modal-content
+                .modal-header
+                  h5.modal-title Mã QR Momo
+                  span.close ×
+                .modal-body
+                  img(width='300px' height='300px' src='https://www.qrcode-gen.com/images/qrcode-default.png' alt='')
+    script(src='./assets/js/payment.js')

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canteen US</title>
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&display=swap" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+
+<body>
+    <div class="app" style="min-height: 100vh;">
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet">
+                    <ul class="header__navbar-list" style="width:1200px">
+                        <!-- Header with Search -->
+                        <div class="header-with-search">
+                            <label for="mobile-search-checkbox" class="header__mobile-search">
+                                <i class="header__mobile-search-icon fas fa-search"></i>
+                            </label>
+
+                            <!-- Header Logo -->
+                            <div class="header__logo hide-on-tablet">
+                                <img src="./assets/img/logo.png" alt="" class="header__logo-img" />
+                                <a href="/" class="header__logo-link">
+                                </a>
+                            </div>
+                            <input type="checkbox" hidden id="mobile-search-checkbox" class="header__search-checkbox" />
+                            <!-- Header Search -->
+                            <div class="header__search ">
+                                <div class="header__search-input-wrap">
+                                    <input type="text" class="header__search-input"
+                                        placeholder="Nhập để tìm kiếm sản phẩm" />
+
+
+                                </div>
+
+                                <button class="header__search-btn">
+                                    <i class="header__search-btn-icon fas fa-search"></i>
+                                </button>
+                            </div>
+
+                            <!-- Header Logo -->
+                            <div class="header__location hide-on-tablet">
+                                <img src="./assets/img/location.png" alt="" class="header__location-img" />
+                                <a href="/" class="header__location-link">
+                                </a>
+                            </div>
+
+
+
+
+                            <!-- User -->
+                            <div class="header__user">
+                                <img src="./assets/img/user_avatar.png" alt="" class="header__navbar-user-img" />
+                                <ul class="header__navbar-user-menu">
+                                    <li class="header__navbar-user-item">
+                                        <a href="">Tài khoản của tôi</a>
+                                    <li class="header__navbar-user-item header__navbar-user-item--separate">
+                                        <a href="">Đăng xuất</a>
+                            </div>
+
+
+
+                        </div>
+            </div>
+
+        </header>
+        <div class="app__container" style="background-color: white;">
+            <div class="grid wide">
+                <div class="row sm-gutter app__content">
+                    <!-- Category -->
+                    <div class="col l-2 m-0 c-0" style="margin-top: 50px;">
+                        <nav class="category">
+
+                            <ul class="category-list">
+                                <li class="category-item ">
+                                    <button class="category-item__link"><a style="text-decoration: none;"
+                                            href="./index.html">Trang
+                                            chủ </a></button>
+                                </li>
+                                <li class="category-item">
+                                    <button class="category-item__link" class="category-item__link">Thực đơn
+
+                                    </button>
+                                    <!-- <a href="#" class="category-item__link">Thực đơn</a> -->
+                                </li>
+                                <li class="category-item">
+                                    <button class="category-item__link">Kho hàng</button>
+                                    <!-- <a href="#" class="category-item__link">Kho hàng</a> -->
+                                </li>
+                                <li class="category-item ">
+                                    <button class="category-item__link">Khách hàng</button>
+                                    <!-- <a href="#" class="category-item__link">Khách hàng</a> -->
+                                </li>
+                                <li class="category-item category-item--active">
+                                    <button class="category-item__link"><a style="text-decoration: none;"
+                                            href="./chart.html">Thống kê</a></button>
+
+                                </li>
+                                <li class="category-item">
+                                    <button class="category-item__link">Nhân viên</button>
+                                    <!-- <a href="#" class="category-item__link">Nhân viên</a> -->
+                                </li>
+                                <li class="category-item">
+                                    <button class="category-item__link">Tạo thẻ khách hàng</button>
+                                    <!-- <a href="#" class="category-item__link">Tạo thẻ khách hàng</a> -->
+                                </li>
+                                </li>
+                            </ul>
+
+                        </nav>
+                    </div>
+
+                    <div class="right">
+
+                        <div>
+                            <canvas id="myChart"></canvas>
+                        </div>
+
+                        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                        <script>
+                            const ctx = document.getElementById('myChart');
+
+                            new Chart(ctx, {
+                                type: 'line',
+
+                                data: {
+                                    labels: ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12'],
+                                    datasets: [{
+                                        label: 'Thống kê thu nhập',
+                                        data: [12, 19, 3, 5, 2, 3, 50, 12, 1, 21, 2, 2, 12, 1, 5, 5],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+</html>
